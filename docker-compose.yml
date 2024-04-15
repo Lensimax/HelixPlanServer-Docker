@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  helix-plan-server:
+    container_name: helix-plan-server
+    image: lensimax/helixplanserver:2024.1010
+    restart: always
+    environment:
+      - HELIXPLAN_SERVER_NAME="Helix Plan Server"
+      - HELIXPLAN_SERVER_DATABASE_NAME="My Projects"
+      - HELIXPLAN_SERVER_DATABASE_PASSWORD="azerty"
+      - HELIXPLAN_SERVER_ADMIN_PASSWORD="azerty"
+    # volumes:
+    #     - HelixPlanServerData:/opt/HansoftServer/
+    ports:
+        - "50256:50256"
+# volumes:
+#   HelixPlanServerData:
